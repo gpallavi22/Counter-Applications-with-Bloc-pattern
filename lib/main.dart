@@ -1,4 +1,7 @@
 import 'package:bloc_pattern/bloc/counter/counter_bloc.dart';
+import 'package:bloc_pattern/bloc/image_picker/image_picker_bloc.dart';
+import 'package:bloc_pattern/bloc/switch/switch_bloc.dart';
+import 'package:bloc_pattern/utils/Image_picker_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -12,17 +15,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Sizer(
       builder: (BuildContext context, Orientation orientation, DeviceType deviceType) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider<CounterBloc>(
-              create: (context) => CounterBloc(),
-            ),
+            BlocProvider<CounterBloc>(create: (context) => CounterBloc()),
+            BlocProvider<SwitchBloc>(create: (context) => SwitchBloc()),
+            BlocProvider<ImagePickerBloc>(create: (context) => ImagePickerBloc(ImagePickerUtils())),
           ],
           child: MaterialApp(
             title: 'Bloc Structure Demo',
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
               useMaterial3: true,
             ),
             debugShowCheckedModeBanner: false,
-            initialRoute: RoutesName.counterScreen,
+            initialRoute: RoutesName.imagePickerScreen,
             onGenerateRoute: Routes.generateRoute,
           ),
         );

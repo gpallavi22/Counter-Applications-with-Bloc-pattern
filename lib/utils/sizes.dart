@@ -23,7 +23,7 @@ class Sizes {
   // ---------- SPACING ----------
 
   static double get space => w(4, max: 24);
-  static double get sectionSpace => w(6, max: 32);
+  static Widget get sectionSpace => SizedBox(height: w(6, max: 32));
 
   // ---------- TEXT ----------
 

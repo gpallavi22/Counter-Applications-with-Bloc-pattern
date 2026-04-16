@@ -12,6 +12,10 @@ class Routes {
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case RoutesName.counterScreen:
         return MaterialPageRoute(builder: (context) => const CounterScreen());
+      case RoutesName.switchExampleScreen:
+        return MaterialPageRoute(builder: (context) => const SwitchExample());
+      case RoutesName.imagePickerScreen:
+        return MaterialPageRoute(builder: (context) => const ImagePickerScreen());
       default:
         return MaterialPageRoute(
           builder: (context) {

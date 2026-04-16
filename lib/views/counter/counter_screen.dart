@@ -29,13 +29,13 @@ class _CounterScreenState extends State<CounterScreen> {
                 );
               },
             ),
-            SizedBox(height: 30),
+            Sizes.sectionSpace,
             ElevatedButton(
                 onPressed: () {
                   context.read<CounterBloc>().add(IncrementCounterEvent());
                 },
                 child: const Text('Increment')),
-            SizedBox(height: 30),
+            Sizes.sectionSpace,
             ElevatedButton(
                 onPressed: () {
                   context.read<CounterBloc>().add(DecrementCounterEvent());
